@@ -106,7 +106,7 @@ li {
 @media (orientation: landscape) {
     @media only screen and (max-width: 768px) {
         body {
-			background: url(fondo-menu2.jpg);
+			background: url(fondo2.jpg);
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
