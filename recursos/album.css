@@ -3,6 +3,7 @@
 	padding: 0;
 }	
 
+
 body{
 	margin: 0;
 	height: 100%;
@@ -14,7 +15,6 @@ body{
 	justify-content: center;
 	align-items: center;
 }
-
 body::before{
 	content:"";
 	width: 100%;
@@ -22,106 +22,241 @@ body::before{
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: linear-gradient(45deg,navy,lightblue,navy,purple,pink,purple);	opacity: 0.5;
+	background: linear-gradient(135deg,navy,lightblue,navy,purple,pink,purple);
 	opacity: 0.8;
 	z-index: -1;
 }
 
+/*contenedor del cover y nombre de cantante*/
 .detalles{
-	width: 90%;
+	width: auto;
     display: flex;
 	align-items: center;
 	flex-direction: column;
     justify-content: center;
-	margin: 5px auto;
+	margin: 0 auto;
 }
 
+h2 {
+	text-align: center;
+}
 
-h2 a{
-	font-size: 2em;
-	width: 90%;
+/*nombre de cantante*/
+a{
+	text-decoration: none;
+	margin: 2vh;
+	padding: 2vh;
+	height: auto;
 	text-align: center;
 	font-weight: bold;
-	font-family: sans-serif;
-	color: lightblue;
-	text-shadow: black 2px 2px 2px;
-	margin: 1em auto;
+	color:white;
+	text-shadow: black 1px 1px 1px;
 }
 
-@media screen and (max-width: 1024px) {
-		h2 a{
-			font-size: 1.5em;
-		}
-}
-	
-@media screen and (max-width: 768px) {
-		h2 a{
-			font-size: 1em;
-		}
-}
-
+/*barra de control de audio*/
 #audio{
-	margin: 1em auto;
-	height: 1em;
-	width: 90%;
-	font-size: medium;
+	margin: 1vh auto;
 	display: table-cell;
 	vertical-align: middle;
-    background: linear-gradient(90deg,#52c4df,#ad55c1);
-	opacity: 0.5;
+	opacity: 1;
+    background: linear-gradient(45deg,#52c4df,blue,navy,purple,#ad55c1,pink);
+    position: sticky;
+    top: 0;
+    z-index: +1;
+    border: solid red 0.1vh;
 }
 
+/*barra de control reproductor*/
 #playlist, audio{
-    padding:0.1em;
+    padding: 0.1em;
     list-style: none;
 	margin: 0.1em;
-	border-radius: 1em;
-	
+	border-radius: 5vh;
 }
 
-a {
-    text-decoration:none;
-    text-align: center;
-}
-
-li{
-	list-style: none;
-}
-
+/*canción activa*/
 .active a {
-    color:lightblue;
+    color:white;
     text-decoration:none;
     font-weight: bold;
-	opacity: 1;
+	background: linear-gradient(270deg,#52c4df,blue,navy,purple,#ad55c1,pink);
+	opacity: 0.9;
+	border: solid 1px;
 }
 
+/*listas de reproducccion*/
 li a{
-	width: 90%;
+	text-decoration:none;
+    text-align: center;
     color: white;
-	padding:5px;
+	text-shadow: black 1px 1px 1px;
+	padding: 5px;
     display:block;
-	margin: 1em auto;
-    background: linear-gradient(0deg,);
-	opacity: 1;
-	font-size: 2em;
-	font-weight: bold;
-	font-family: sans-serif;
-	text-shadow: black 5px 5px 5px;
+	margin: 2px auto;
+    background: linear-gradient(0deg,rgb(0, 0, 0, 0.2),rgb(255, 255, 255, 0.2), rgb(0, 0, 0, 0.2));
+	opacity: 0.8;
 	border-radius: 0.3em;
 }
 
-@media screen and (max-width: 1024px) {
-	li a{
-		font-size: 1.5em;
-	}
-}
 
-@media screen and (max-width: 768px) {
-	li a{
+/* media query pantalla vertical */
+@media (orientation: portrait) {
+	@media only screen and (max-width: 768px) {
+	body {
+		height: 98vh;
+		padding-top: 2vh;
+	}	
+	.detalles {
+        width: 95%;
+		height: 10vh;
+        background-color: rgb(0, 0, 0, 0.1);
+		border-radius: 10px 10px 0 0;
+    }
+	h2 {
+        width: 90%;
 		font-size: 1em;
+    }
+	#audio {
+        width: 90%;
+        height: 3vh;
+        padding: 1.5vh;
+        border-radius: 1vh;
+    }
+    li a {
+        width: 88%;
+		font-size: 1em;
+    }
+	section {
+		width: 95%;
+		height: 85vh;
+		overflow: auto;
+		border-radius: 10px;
+        background-color: rgb(0, 0, 0, 0.1);
+		border-radius: 0 0 10px 10px;
+		margin: 0px auto;
 	}
 }
 
-li a:hover{
-	background: lightskyblue;
+@media only screen and (min-width: 768px) {
+	body {
+		height: 98vh;
+		padding-top: 2vh;
+	}	
+	.detalles {
+        width: 70%;
+		height: 10vh;
+        background-color: rgb(0, 0, 0, 0.1);
+		border-radius: 10px 10px 0 0;
+    }
+	h2 {
+        width: 90%;
+		font-size: 1em;
+    }
+	#audio {
+        width: 90%;
+        height: 2vh;
+        padding: 1vh;
+        border-radius: 1vh;
+    }
+    li a {
+        width: 88%;
+		font-size: 1em;
+    }
+	section {
+		width: 70%;
+		height: 85vh;
+		overflow: auto;
+		border-radius: 10px;
+        background-color: rgb(0, 0, 0, 0.1);
+		border-radius: 0 0 10px 10px;
+		margin: 0px auto;
+	}
+}
+}
+
+/* media query pantalla horizontal */
+@media (orientation: landscape) {
+    @media only screen and (max-width: 1024px) {
+		body {
+			background: url(fondo2.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+			justify-content: center;
+			align-items: center;
+			margin: 0px auto;
+			padding: 2vh;
+		}
+		.detalles {
+			width: 70%;
+			height: 15vh;
+            background-color: rgb(0, 0, 0, 0.1);
+            border-radius: 10px 10px 0 0;
+		}
+		h2 {
+			width: 90%;
+			font-size: 1em;
+		}
+		#audio {
+			width: 90%;
+            height: 5vh;
+            padding: 3vh;
+            border-radius: 1vh;
+		}
+		li a {
+			width: 90%;
+			font-size: 1em;
+		}
+		section {
+            margin: 0px auto;
+			width: 70%;
+			height: 80vh;
+			overflow: auto;
+			background-color: rgb(0, 0, 0, 0.1);
+            border-radius: 0 0 10px 10px;
+		}
+	}
+
+    @media only screen and (min-width: 1024px) {
+		body {
+			background: url(fondo2.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+			justify-content: center;
+			align-items: center;
+			margin: 0px auto;
+			padding: 2vh;
+		}
+		.detalles {
+			width: 60%;
+			height: 15vh;
+            background-color: rgb(0, 0, 0, 0.1);
+            border-radius: 10px 10px 0 0;
+		}
+		h2 {
+			width: 90%;
+			font-size: 1.5em;
+		}
+		#audio {
+			width: 90%;
+            height: 5vh;
+            padding: 1vh;
+            border-radius: 1vh;
+		}
+		li a {
+			width: 90%;
+			font-size: 1.5em;
+		}
+		section {
+            margin: 0px auto;
+			width: 60%;
+			height: 80vh;
+			overflow: auto;
+			background-color: rgb(0, 0, 0, 0.1);
+            border-radius: 0 0 10px 10px;
+		}
+	}
 }
